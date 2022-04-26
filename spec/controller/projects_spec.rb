@@ -1,4 +1,3 @@
-
 require "rails_helper"
 
 RSpec.describe ProjectsController, type: :controller do
@@ -17,4 +16,54 @@ RSpec.describe ProjectsController, type: :controller do
       expect(response).to be_success
     end
   end
+
+  context "GET #new" do
+    login_user
+    it "returns a success response" do
+      get :new
+      expect(response).to be_success
+    end
+  end
+
+  context "POST #projects" do
+    login_user
+    it "returns a success response" do
+      post :create, :params => { :project => { :title => "Any Name" , :description => "Any Name" } }
+      
+      #expect(response).to be_success
+      expect(Project.count).to eq(1)
+    end
+  end
+
+  context "POST #projects" do
+  login_user
+  it "returns a bad response" do
+    post :create, :params => { :project => { :title => "" , :description => "Any Name" } }
+    
+    #expect(response).to be_success
+    expect(Project.count).to eq(0)
+  end
+end
+
+  context "PATCH #projects/1" do
+    login_user
+    let!(:project) { Project.create(title: "Test title", description: "Test") }
+    it "returns a success response" do
+      patch :update, :params => { :id => project, :project => { :title => "Test title", :description => "Test1" }}
+      expect(Project.first.description).to eq "Test1"
+    end
+  end
+
+  context "DELETE #projects/1" do
+    login_user
+    let!(:project) { Project.create(title: "Test title", description: "Test description") }
+    it "Project was deleted" do
+      expect(Project.count).to eq(1)
+      delete :destroy, :params => { :id => project }
+      expect(Project.count).to eq(0)
+    end
+    it "Project was deleted" do
+    end
+  end
+
 end

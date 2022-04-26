@@ -5,6 +5,8 @@ ruby '2.7.0'
 
 #devise
 gem 'devise'
+gem 'factory_bot_rails'
+gem 'webdrivers'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6', '>= 5.2.6.3'
 # Use Puma as the app server
