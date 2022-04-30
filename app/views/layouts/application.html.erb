@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Cs3300</title>
+    <title>UCCS Portfolio</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <div style="padding-left: 10px;">
+            <%= button_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-outline-success",  :form_class => "form-inline"%>
+          </div>
+        <% else %>
+          <div style="padding-left: 10px;">
+            <%= button_to "Login", new_user_session_path, method: :get, :class => "btn btn-outline-primary", :form_class => "form-inline" %>
+          </div>
+          <div style="padding-left: 10px;">
+            <%= button_to "Sign Up", new_user_registration_path, method: :get, :class => "btn btn-outline-success", :form_class => "form-inline" %>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+
+    
+  <main role="main" id="main">
     <%= yield %>
+  </main>
+  <hr>
+  <footer class="container text-center">
+    <p>Michael Aragon | michaeljaragon@gmail.com</p>
+  </footer>
   </body>
 </html>
