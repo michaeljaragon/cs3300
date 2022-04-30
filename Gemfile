@@ -7,6 +7,8 @@ ruby '2.7.0'
 gem 'devise'
 gem 'factory_bot_rails'
 gem 'webdrivers'
+gem 'bootstrap', '~> 4.6.1'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.6', '>= 5.2.6.3'
 # Use Puma as the app server
