@@ -1,14 +1,9 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+  <h1 class="display-3"><%= @project.title %></h1>
+  <p><strong></strong><%= @project.description %></p>
+  <p><%= button_to 'Edit', edit_project_path(@project), method: :get, :class => "btn btn-secondary"%>
+  <p><%= button_to 'Back', projects_path, method: :get, :class => "btn btn-secondary"%></p>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

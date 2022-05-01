@@ -8,7 +8,7 @@
         <p></p>
         <h2><%= project.title %></h2>
         <p><%= project.description %></p>
-        <%=button_to 'Show', project, method: :get, :class => "btn btn-secondary"%>
+        <p><%=button_to 'Show', project, method: :get, :class => "btn btn-secondary"%></p>
         <% if user_signed_in? %>
           <p><%= button_to 'Edit', edit_project_path(project), method: :get, :class => "btn btn-secondary"%></p>
           <p><%= button_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-secondary" %></p>
