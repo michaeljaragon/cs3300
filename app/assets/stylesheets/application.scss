@@ -13,4 +13,16 @@
     position:relative;
     text-align:center;
     }
-    
+
+   .pass-page > .card {
+      background-color: white;
+      width: 22rem;
+      margin: 0 auto;
+      float: none;
+      margin-bottom: 10px;
+      margin-top: 10px;
+   }
+
+   .pass-page > .card > .card-block {
+      border-color: #dee2e6;
+   }
