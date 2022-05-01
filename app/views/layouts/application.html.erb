@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <head>
     <title>UCCS Portfolio</title>
     <%= csrf_meta_tags %>
@@ -12,9 +13,6 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">Home 🏠</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
 
       <div class="navbar-nav ml-auto">
         <% if user_signed_in? %>
@@ -32,22 +30,26 @@
       </div>
     </nav>
 
-
     <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">It&#39;s Michael Aragon!</h1>
           <p>Michael develops software for Ent Credit Union. He has a BS in Mathematics from UCCS and will be starting my MS in Computer Science in the Fall 2022.</p>
           <p><a class="btn btn-primary btn-lg" href="https://github.com/michaeljaragon" role="button">Github &raquo;</a></p>
+          <% if user_signed_in? %>
+            <h1 class="display-9" >Want to add something?</h1>
+            <a><%= button_to "Add New Accomplishment", new_project_path, method: :get, :class => "btn btn-secondary" , :form_class => "form-inline"%></a>
+          <% end %>
         </div>
       </div>
     
   <main role="main" id="main">
     <%= yield %>
-  </main>
+  </main>  
+
   <hr>
   <footer class="container text-center">
-    <p>Michael Aragon | michaeljaragon@gmail.com</p>
+    <p>Michael Aragon 🙂 | michaeljaragon@gmail.com</p>
   </footer>
   </body>
 </html>
