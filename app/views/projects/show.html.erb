@@ -2,7 +2,9 @@
 <div class="container">
   <h1 class="display-3"><%= @project.title %></h1>
   <p><strong></strong><%= @project.description %></p>
-  <p><%= button_to 'Edit', edit_project_path(@project), method: :get, :class => "btn btn-secondary"%>
+  <% if user_signed_in? %>
+    <p><%= button_to 'Edit', edit_project_path(@project), method: :get, :class => "btn btn-secondary"%>
+  <% end %>
   <p><%= button_to 'Back', projects_path, method: :get, :class => "btn btn-secondary"%></p>
 </div>
 

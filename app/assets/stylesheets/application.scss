@@ -1,6 +1,6 @@
  @import "bootstrap";
 
- html, head, body, main{
+ html, head, main{
     height: 95%;
  }
 
@@ -19,13 +19,10 @@
     text-align:center;
     }
 
-    main {
-      border-bottom:1px solid #dee2e6;
-    }
-
     footer { 
       position:absolute; 
       bottom:0;
+      border-top:1px solid #dee2e6;
       text-align: center;
       height: 5%;
       width:100%;
