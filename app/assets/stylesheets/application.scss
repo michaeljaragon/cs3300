@@ -1,5 +1,9 @@
  @import "bootstrap";
 
+ html, head, body, main{
+    height: 95%;
+ }
+
  .row {
     text-align: center;
  }
@@ -12,8 +16,17 @@
     padding-left: 5%;
     padding-right: 5%;
     position:relative;
-   //  margin-bottom: 2.5%;
-   //  margin-right: 2.5%;
-   //  max-width: 20%;
     text-align:center;
     }
+
+    main {
+      border-bottom:1px solid #dee2e6;
+    }
+
+    footer { 
+      position:absolute; 
+      bottom:0;
+      text-align: center;
+      height: 5%;
+      width:100%;
+      }

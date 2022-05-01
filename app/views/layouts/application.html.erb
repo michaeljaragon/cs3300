@@ -31,10 +31,11 @@
     </nav>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
+    <% if request.path != new_user_session_path && request.path != new_user_registration_path && request.path != new_user_password_path %>
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">It&#39;s Michael Aragon!</h1>
-          <p>Michael develops software for Ent Credit Union. He has a BS in Mathematics from UCCS and will be starting my MS in Computer Science in the Fall 2022.</p>
+          <p>Michael develops software for Ent Credit Union. He has a BS in Mathematics from UCCS and will be starting his MS in Computer Science in Fall 2022.</p>
           <p><a class="btn btn-primary btn-lg" href="https://github.com/michaeljaragon" role="button">Github &raquo;</a></p>
           <% if user_signed_in? %>
             <h1 class="display-9" >Want to add something?</h1>
@@ -42,14 +43,12 @@
           <% end %>
         </div>
       </div>
-    
+    <% end %>
+  
   <main role="main" id="main">
     <%= yield %>
   </main>  
 
-  <hr>
-  <footer class="container text-center">
-    <p>Michael Aragon 🙂 | michaeljaragon@gmail.com</p>
-  </footer>
+  <footer>Michael Aragon 🙂 | michaeljaragon@gmail.com</footer>
   </body>
 </html>
